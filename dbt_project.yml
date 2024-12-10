@@ -37,12 +37,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 vars:
   vcity: "'Madrid'"
   #dbt_dq_tool_schema: AUDITING_DEV
-  dbt_dq_tool_Schema:  "{{env_var('DBT_SOURCESCHEMA', 'AUDITING_DEV')}}"
-  dq_tools_enable_store_test_results: True
+  #dbt_dq_tool_Schema:  "{{env_var('DBT_SOURCESCHEMA', 'AUDITING_DEV')}}"
+  #dq_tools_enable_store_test_results: True
 
 on-run-start: "use warehouse compute_wh"
 #on-run-end: "grant usage on database QWTANALYTICS to public"
-on-run-end: "{{ dq_tools.store_test_results(results) }}" 
+#on-run-end: "{{ dq_tools.store_test_results(results) }}" 
   
 models:
   #Notice no double code in schema param as it's SQL
